@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 01:13:15 by vzashev           #+#    #+#             */
+/*   Updated: 2023/10/27 01:16:55 by vzashev          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void    ft_free_map(t_so_long *game)
+void	ft_free_map(t_so_long *game)
 {
 	int	i;
 
@@ -20,7 +32,7 @@ int	ft_close(t_so_long *game)
 
 void	ft_init(t_so_long *game)
 {
-    game->stats.player = 0;
+	game->stats.player = 0;
 	game->stats.escape = 0;
 	game->stats.enemies = 0;
 	game->stats.coins = 0;
@@ -33,7 +45,7 @@ void	ft_up_img(t_so_long *game)
 {
 	int	size;
 
-    game->player = \
+	game->player = \
 	mlx_xpm_file_to_image(game->mlx, "skins/player.xpm", &size, &size);
 	game->wall = \
 	mlx_xpm_file_to_image(game->mlx, "skins/wall.xpm", &size, &size);
@@ -49,20 +61,18 @@ void	ft_up_img(t_so_long *game)
 
 int	main(int argc, char **argv)
 {
-    t_so_long game;
+	t_so_long	game;
 
 	if (argc != 2)
-    {
-        ft_printf("Error: the game requires only 2 args!\n");
+	{
+		ft_printf("Error: the game requires only 2 args!\n");
 		return (0);
-    }
+	}
 	ft_init(&game);
 	ft_read_map(argv[1], &game);
 	ft_is_ber(argv[1]);
 	if (ft_map_check(&game) == 0)
-	{
 		exit (1);
-	}
 	if (!ft_check_path(&game))
 	{
 		printf("Error: the path of the map is not valid!\n");

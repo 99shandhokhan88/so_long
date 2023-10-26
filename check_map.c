@@ -1,41 +1,6 @@
+
+
 #include "so_long.h"
-
-
-/*
-int	ft_is_ber(int argc, char *argv)
-{
-	int	len;
-
-	len = 0;
-    (void)argc;
-	while (argv[len])
-		len++;
-	if (argv[len] == 'r' && argv[len - 1] == 'e' && argv[len - 2] == 'b' \
-	&& argv[len - 3] == '.')
-		return (1);
-    ft_printf("Error: the map is not a .ber file!\n");
-	exit (1);
-}
-
-*/
-
-int	ft_is_ber(char *str)
-{
-    int len;
-
-    len = 0;
-    len = ft_strlen(str);
-	if (str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
-            && str[len - 4] == '.')
-		return (0);
-    else
-    {
-        ft_printf("Error: the map is not a .ber file!\n");
-	    exit (1);
-    }
-}
-
-
 
 static	int	ft_shape(t_so_long *game)
 {

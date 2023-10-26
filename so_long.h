@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 01:30:03 by vzashev           #+#    #+#             */
+/*   Updated: 2023/10/27 01:44:55 by vzashev          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -11,23 +23,23 @@
 
 typedef struct s_stats
 {
-    int		player;
-	int		coins;
-    int		enemies;
-	int		escape;
-} t_stats;
+	int	player;
+	int	coins;
+	int	enemies;
+	int	escape;
+}	t_stats;
 
 typedef struct s_so_long
 {
-	t_stats stats;
+	t_stats	stats;
 	char	**map;
 	char	*img;
 	void	*mlx;
 	void	*win;
-    void	*player;
+	void	*player;
 	void	*floor;
 	void	*wall;
-    void	*coin;
+	void	*coin;
 	void	*enemy;
 	void	*escape;
 	int		exit_count;
@@ -39,19 +51,19 @@ typedef struct s_so_long
 	int		y;
 	int		flag;
 	int		time;
-}   t_so_long;
+}	t_so_long;
 
-int	ft_move(int key, t_so_long *game);
-void    ft_free_map(t_so_long *game);
-int	ft_close(t_so_long *game);
+int		ft_move(int key, t_so_long *game);
+void	ft_free_map(t_so_long *game);
+int		ft_close(t_so_long *game);
 void	ft_init(t_so_long *game);
 void	ft_up_img(t_so_long *game);
-int	ft_animation(t_so_long *game);
-int	ft_check_path(t_so_long *game);
-int	ft_get_height(char *c);
+int		ft_animation(t_so_long *game);
+int		ft_check_path(t_so_long *game);
+int		ft_get_height(char *c);
 void	ft_draw_map(t_so_long *game);
-int	ft_is_ber(char *str);
-int	ft_map_check(t_so_long *game);
-int	ft_read_map(char *map, t_so_long *game);
+int		ft_is_ber(char *str);
+int		ft_map_check(t_so_long *game);
+int		ft_read_map(char *map, t_so_long *game);
 
 #endif

@@ -1,35 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/27 01:18:18 by vzashev           #+#    #+#             */
+/*   Updated: 2023/10/27 01:20:35 by vzashev          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-/*int	ft_read_map(char *argv, t_so_long *game)
+int	ft_is_ber(char *str)
 {
-	char	*str;
-	int		fd;
+	int	len;
 
-	fd = open(argv, O_RDONLY);
-	if (fd == -1)
+	len = 0;
+	len = ft_strlen(str);
+	if (str[len - 1] == 'r' && str[len - 2] == 'e' && str[len - 3] == 'b'
+		&& str[len - 4] == '.')
 		return (0);
-	str = malloc(sizeof(char) * 1000);
-	read(fd, str, 1000);
-	game->map = ft_split(str, '\n');
-	if (!game->map)
-		exit(0);
-	while (game->map[game->rows])
+	else
 	{
-		game->cols = 0;
-		while (game->map[game->rows][game->cols])
-			game->cols++;
-		game->rows++;
+		ft_printf("Error: the map is not a .ber file!\n");
+		exit (1);
 	}
-	close(fd);
-	free(str);
-	return (1);
 }
-*/
-
-
-
-
-
 
 int	ft_get_height(char *c)
 {
@@ -87,6 +84,6 @@ int	ft_read_map(char *map, t_so_long *game)
 	free (line);
 	if (!game->map)
 		return (0);
-    ft_find_p(game, 'P');
+	ft_find_p(game, 'P');
 	return (0);
 }
