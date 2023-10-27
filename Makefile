@@ -5,6 +5,7 @@ SRCS = main.c \
       so_long.c  \
       check_map.c \
 	  path_finder.c \
+	  check_map_init.c \
       player.c
 
 OBJS = $(SRCS:.c=.o)
