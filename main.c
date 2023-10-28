@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:13:15 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 18:27:39 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/28 04:50:04 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,11 @@ int	main(int argc, char **argv)
 	ft_read_map(argv[1], &game);
 	ft_is_ber(argv[1]);
 	ft_map_check(&game);
-	ft_map_check2(&game);
 	if (!ft_check_path(&game))
 	{
-		printf("Error: the path of the map is not valid!\n");
+		ft_printf("Error: the path of the map is not valid!\n");
 		exit (1);
 	}
-	printf("cazzp\n");
 	game.mlx = mlx_init();
 	ft_up_img(&game);
 	game.win = mlx_new_window(game.mlx, game.cols * 64, game.rows * 64, \

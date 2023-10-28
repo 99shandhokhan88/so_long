@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:30:03 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 18:30:17 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/28 04:51:56 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,14 @@ int		ft_animation(t_so_long *game);
 int		ft_check_path(t_so_long *game);
 int		ft_get_height(char *c);
 void	ft_draw_map(t_so_long *game);
-int	ft_shape(t_so_long *game);
-int	ft_walls_2(t_so_long *game);
-int	ft_walls(t_so_long *game);
-int	ft_elems2(t_so_long *game, int i, int j);
-int	ft_elems(t_so_long *game);
-void		ft_map_check2(t_so_long *game);
+int		ft_shape(t_so_long *game);
+int		ft_walls_2(t_so_long *game);
+int		ft_walls(t_so_long *game);
+int		ft_elems2(t_so_long *game, int i, int j);
+int		ft_elems(t_so_long *game);
+int		ft_map_check2(t_so_long *game);
 int		ft_is_ber(char *str);
-void		ft_map_check(t_so_long *game);
+int		ft_map_check(t_so_long *game);
 int		ft_read_map(char *map, t_so_long *game);
 
 #endif

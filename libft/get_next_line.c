@@ -6,13 +6,13 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:30:20 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 01:30:24 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/28 04:53:52 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*risultato(char *s)
+char	*ft_result(char *s)
 {
 	int		i;
 	char	*knife;
@@ -43,28 +43,28 @@ char	*risultato(char *s)
 char	*ft_read_file(int fd, char *stash)
 {
 	char	*buffer;
-	int		ret_read;
+	int		bytes;
 
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	ret_read = 1;
-	while (ret_read != 0)
+	bytes = 1;
+	while (bytes != 0)
 	{
-		ret_read = (int)read(fd, buffer, BUFFER_SIZE);
-		if (ret_read == -1)
+		bytes = (int)read(fd, buffer, BUFFER_SIZE);
+		if (bytes == -1)
 		{
 			free (buffer);
 			return (NULL);
 		}
-		buffer[ret_read] = '\0';
+		buffer[bytes] = '\0';
 		stash = ft_strjoin(stash, buffer);
 	}
 	free(buffer);
 	return (stash);
 }
 
-char	*next(char *s)
+char	*ft_next(char *s)
 {
 	int		i;
 	char	*knife;
@@ -92,15 +92,15 @@ char	*next(char *s)
 
 char	*get_next_line(int fd)
 {
-	static char	*fox;
+	static char	*stash;
 	char		*result;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	fox = ft_read_file(fd, fox);
-	if (!fox)
+	stash = ft_read_file(fd, stash);
+	if (!stash)
 		return (NULL);
-	result = risultato(fox);
-	fox = next(fox);
+	result = ft_result(fox);
+	stash = ft_next(fox);
 	return (result);
 }
