@@ -70,13 +70,17 @@ Efficiently updating the game grid during rendering is essential for providing a
 ### Key Matrix Operations
 Several key matrix operations and logical checks are performed throughout the project:
 
-### Matrix Traversal: Iterating through the 2D array to access and modify elements based on player movement or game events.
+### Matrix Traversal:
+Iterating through the 2D array to access and modify elements based on player movement or game events.
 
-### Element Verification: Checking the type of element (e.g., '1', '0', 'C', 'P', 'E') at a given matrix position to determine game logic, such as collision, collection, or reaching the exit.
+### Element Verification:
+Checking the type of element (e.g., '1', '0', 'C', 'P', 'E') at a given matrix position to determine game logic, such as collision, collection, or reaching the exit.
 
-### Matrix Modification: Updating the matrix to reflect changes in the game world, such as collecting coins ('C' becomes '0') or reaching the exit ('E' becomes 'U').
+### Matrix Modification:
+Updating the matrix to reflect changes in the game world, such as collecting coins ('C' becomes '0') or reaching the exit ('E' becomes 'U').
 
-### Matrix Validation: Ensuring that the map adheres to predefined rules, which is fundamental for fair gameplay.
+### Matrix Validation:
+Ensuring that the map adheres to predefined rules, which is fundamental for fair gameplay.
 
 ### Learning Objectives
 The "So_Long" project provides an opportunity to enhance your skills in matrix management, logical operations, and game development using C. It tests your ability to manipulate 2D arrays efficiently for game mechanics and rendering, making it an engaging exercise in applying computer science concepts to real-world applications.
