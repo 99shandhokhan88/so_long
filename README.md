@@ -107,4 +107,12 @@ In summary, "So_Long" is more than just a game; it's a practical demonstration o
 - `so_long.c`: The creation of the map from the .xpm file.
 - `so_long.h`: Header file containing function prototypes and structures.
 
+- -Lmlx_linux -lmlx_linux -framework OpenGL -framework AppKit -o $(NAME)
+
+<img width="1859" alt="Schermata 2023-11-01 alle 23 01 43" src="https://github.com/99shandhokhan88/so_long/assets/110407556/e4583e95-68f6-4c9b-880a-09e271fdb8af">
+
+
+
+
+
 ---
