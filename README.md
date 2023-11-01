@@ -12,6 +12,10 @@
 
 ## Overview
 "so_Long" is a 2D maze game in C where players navigate through a maze, collect items, and reach the exit while avoiding obstacles. It features XPM graphics and keyboard controls using the X-Window with MiniLibX, offering a fun programming project for game development enthusiasts.
+My so_long is ispired by the space. The player is a comete that goes through blank black space, the walls are the far stars, the enemies are the Sun or simple near stars, the coins are the stardust that the comete collects and the exit is our planet Earth. No sounds because in space there aren't.
+The hardest part of the project was the path finder.
+I didn't the bonuses but I implemented the enemies.
+The core of the project is the manage of the matrix using the MLX library to show on the window the sprites.
 
 ## Project Description
 "So_Long" is a simple game with the following features:
@@ -57,6 +61,38 @@
   - 'E' for the exit.
   - 'P' for the player character.
   - You can create your custom maps by modifying the text files in the `maps` directory.
+
+
+### Matrix Management
+The matrix management in "So_Long" plays a crucial role in several aspects of the game:
+
+### 1. Map Representation
+The game map is represented as a 2D matrix or grid. Each cell in the grid corresponds to a specific element in the game world, such as walls ('1'), open paths ('0'), collectible coins ('C'), the player character ('P'), and the exit ('E').
+This matrix management allows you to easily visualize the game world, making it more intuitive for both players and developers.
+### 2. Map Validation
+One of the key challenges in this project is verifying the validity of the game map. This involves ensuring that the map is properly enclosed by walls ('1'), the player character ('P') exists, there are coins ('C') to collect, and there's an exit ('E') to reach.
+Matrix traversal and validation are performed to ensure the map meets these criteria. This validation step showcases your matrix management skills.
+### 3. Player Movement
+Player movement is determined by matrix navigation. When the player character ('P') moves in a specific direction (up, down, left, or right), the matrix is updated accordingly. You must ensure that the player doesn't collide with walls ('1') and correctly collects coins ('C') or reaches the exit ('E').
+### 4. Map Rendering
+To display the game visually, you render the game map using the MinilibX library. Matrix management is used to iterate through the 2D array and draw the corresponding images on the screen.
+Efficiently updating the game grid during rendering is essential for providing a smooth gaming experience.
+### Key Matrix Operations
+Several key matrix operations and logical checks are performed throughout the project:
+
+### Matrix Traversal: Iterating through the 2D array to access and modify elements based on player movement or game events.
+
+### Element Verification: Checking the type of element (e.g., '1', '0', 'C', 'P', 'E') at a given matrix position to determine game logic, such as collision, collection, or reaching the exit.
+
+### Matrix Modification: Updating the matrix to reflect changes in the game world, such as collecting coins ('C' becomes '0') or reaching the exit ('E' becomes 'U').
+
+### Matrix Validation: Ensuring that the map adheres to predefined rules, which is fundamental for fair gameplay.
+
+### Learning Objectives
+The "So_Long" project provides an opportunity to enhance your skills in matrix management, logical operations, and game development using C. It tests your ability to manipulate 2D arrays efficiently for game mechanics and rendering, making it an engaging exercise in applying computer science concepts to real-world applications.
+
+In summary, "So_Long" is more than just a game; it's a practical demonstration of how matrix management is used to create and validate game worlds, control player movements, and render the game visually. This project is a valuable learning experience for those looking to strengthen their skills in C programming and matrix manipulation.
+
 
 ## Code Structure
 - `libft/`: Directory containing some utility functions from my projects "libft", "get_next_line" and "ft_printf".
