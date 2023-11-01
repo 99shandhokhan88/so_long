@@ -20,6 +20,7 @@ The core of the project is the manage of the matrix using the MLX library to sho
 ### Prerequisites
 - A C compiler (e.g., GCC).
 - MinilibX graphics library (provided in the project files).
+- The MLX that I use is for Linux, in fact there are specific flags in the Makefile for Linux.
 
 ### Installation
 1. Clone the repository to your local machine:
