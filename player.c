@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:11:43 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 01:12:57 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/31 06:32:00 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static void	ft_move_up(int key, t_so_long *game)
 			if (game->map[game->y][game->x] == 'C')
 				game->stats.coins--;
 			game->map[game->y][game->x] = 'P';
+			game->moves++;
 		}
-		game->moves++;
 	}
 }
 
@@ -49,8 +49,8 @@ static void	ft_move_down(int key, t_so_long *game)
 			if (game->map[game->y][game->x] == 'C')
 				game->stats.coins--;
 			game->map[game->y][game->x] = 'P';
+			game->moves++;
 		}
-		game->moves++;
 	}
 }
 
@@ -70,8 +70,8 @@ static void	ft_move_right(int key, t_so_long *game)
 			if (game->map[game->y][game->x] == 'C')
 				game->stats.coins--;
 			game->map[game->y][game->x] = 'P';
+			game->moves++;
 		}
-		game->moves++;
 	}
 }
 
@@ -91,8 +91,8 @@ static void	ft_move_left(int key, t_so_long *game)
 			if (game->map[game->y][game->x] == 'C')
 				game->stats.coins--;
 			game->map[game->y][game->x] = 'P';
+			game->moves++;
 		}
-		game->moves++;
 	}
 }
 
@@ -111,11 +111,11 @@ int	ft_move(int key, t_so_long *game)
 	steps = ft_itoa(game->moves);
 	coins = ft_itoa(game->stats.coins);
 	mlx_string_put(game->mlx, game->win, 10, 10, 0xFFFFFF, "STEPS:");
-	mlx_string_put(game->mlx, game->win, 100, 10, 0xFFFFFF, steps);
-	printf("steps : %d\n", game->moves);
+	mlx_string_put(game->mlx, game->win, 60, 10, 0xFFFFFF, steps);
+	ft_printf("steps : %d\n", game->moves);
 	mlx_string_put(game->mlx, game->win, 10, 40, 0xFFFFFF, "COINS:");
-	mlx_string_put(game->mlx, game->win, 100, 40, 0xFFFFFF, coins);
-	printf("coins : %d\n\n", game->stats.coins);
+	mlx_string_put(game->mlx, game->win, 60, 40, 0xFFFFFF, coins);
+	ft_printf("coins : %d\n\n", game->stats.coins);
 	free(coins);
 	free(steps);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:30:20 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/28 04:53:52 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/31 05:09:35 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ char	*get_next_line(int fd)
 	stash = ft_read_file(fd, stash);
 	if (!stash)
 		return (NULL);
-	result = ft_result(fox);
-	stash = ft_next(fox);
+	result = ft_result(stash);
+	stash = ft_next(stash);
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:11:18 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 18:13:25 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/10/31 05:24:42 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,23 @@ int	ft_elems2(t_so_long *game, int i, int j)
 		game->stats.coins++;
 		return (0);
 	}
-	else if (game->map[j][i] == 'E')
+	if (game->map[j][i] == 'E')
 	{
 		game->stats.escape++;
 		return (0);
 	}
-	else if (game->map[j][i] == 'N')
+	if (game->map[j][i] == 'N')
 	{
 		game->stats.enemies++;
 		return (0);
 	}
-	else if (game->map[j][i] == 'P')
+	if (game->map[j][i] == 'P')
 	{
 		game->stats.player++;
 		return (0);
 	}
-	return (1);
+	else
+		return (1);
 }
 
 int	ft_elems(t_so_long *game)
@@ -116,15 +117,16 @@ int	ft_elems(t_so_long *game)
 		i = 0;
 		while (game->map[j][i])
 		{
-			if (ft_elems2(game, i, j))
-				continue ;
-			else if (game->map[j][i] != '0' && game->map[j][i] != '1')
-				return (0);
+			if ((ft_elems2(game, i, j)))
+			{
+				if (game->map[j][i] != '0' && game->map[j][i] != '1')
+					return (0);
+			}
 			i++;
 		}
 	}
-	if (game->stats.coins < 1 || game->stats.player < 1 
-		|| game->stats.escape < 1)
+	if (game->stats.coins < 1 || game->stats.player != 1 
+		|| game->stats.escape != 1)
 		return (0);
 	return (1);
 }

@@ -1,5 +1,6 @@
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
+CC = cc
 OBJ = $(SRC:%.c=%.o)
 SRC =	./ft_printf_utils_1.c \
 		./ft_printf_utils_2.c \
@@ -14,9 +15,11 @@ SRC =	./ft_printf_utils_1.c \
 		./ft_substr.c \
 		./ft_itoa.c
 
+%.o: %.c
+	$(CC) ${FLAGS} -c $< -o $@
 all : $(NAME)
 $(NAME) :
-	gcc -c $(FLAGS) -I ./ $(SRC)
+	$(CC) -c $(FLAGS) -I ./ $(SRC)
 	ar rcs $(NAME) $(OBJ)
 clean :
 	rm -f $(OBJ)

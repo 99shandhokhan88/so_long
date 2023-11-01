@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:13:15 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/28 04:50:04 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/11/01 02:49:43 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	ft_init(&game);
 	ft_read_map(argv[1], &game);
 	ft_is_ber(argv[1]);
-	ft_map_check(&game);
+	ft_map_check2(&game);
 	if (!ft_check_path(&game))
 	{
 		ft_printf("Error: the path of the map is not valid!\n");
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 	game.mlx = mlx_init();
 	ft_up_img(&game);
 	game.win = mlx_new_window(game.mlx, game.cols * 64, game.rows * 64, \
-			"so_long by vzashev");
+			"so_long by vzashev:\n * comet simulator *");
 	ft_draw_map(&game);
 	mlx_key_hook(game.win, ft_move, &game);
 	mlx_hook(game.win, 17, 0, ft_close, &game);

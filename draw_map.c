@@ -6,7 +6,7 @@
 /*   By: vzashev <vzashev@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:17:09 by vzashev           #+#    #+#             */
-/*   Updated: 2023/10/27 01:17:11 by vzashev          ###   ########.fr       */
+/*   Updated: 2023/11/01 10:44:05 by vzashev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ static	void	ft_draw_enemy(t_so_long *game)
 		{
 			if (game->map[a][b] == 'N')
 			{
-				if (game->flag == 0)
-					mlx_put_image_to_window(game->mlx, game->win, \
-					game->enemy, b * 64, a * 64);
-				game->flag = 1 - game->flag;
+				mlx_put_image_to_window(game->mlx, game->win, \
+				game->enemy, b * 64, a * 64);
 			}
 			b++;
 		}
@@ -77,7 +75,7 @@ static	void	ft_draw_pne(t_so_long *game)
 		while (game->map[x][y])
 		{
 			if (game->map[x][y] == 'N')
-				mlx_loop_hook(game->mlx, ft_animation, game);
+				ft_draw_enemy(game);
 			else if (game->map[x][y] == 'P')
 			{
 				game->y = x;
@@ -91,17 +89,6 @@ static	void	ft_draw_pne(t_so_long *game)
 		}
 		x++;
 	}
-}
-
-int	ft_animation(t_so_long *game)
-{
-	if (game->time == 1000)
-	{
-		game->time = 0;
-		ft_draw_enemy(game);
-	}
-	game->time++;
-	return (0);
 }
 
 void	ft_draw_map(t_so_long *game)
