@@ -29,6 +29,9 @@ The core of the project is the manage of the matrix using the MLX library to sho
 
 2. Build the project:
    ```sh
+   cd mlx_linux
+   make
+   cd ..
    make
    ```
 
