@@ -1,15 +1,5 @@
 # So_Long - 2D Game Development
 
-## Table of Contents
-- [Overview](#overview)
-- [Project Description](#project-description)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [How to Play](#how-to-play)
-- [Map Design](#map-design)
-- [Code Structure](#code-structure)
-
 ## Overview
 "so_Long" is a 2D maze game in C where players navigate through a maze, collect items, and reach the exit while avoiding obstacles. It features XPM graphics and keyboard controls using the X-Window with MiniLibX, offering a fun programming project for game development enthusiasts.
 My so_long is ispired by the space. The player is a comete that goes through blank black space, the walls are the far stars, the enemies are the Sun or simple near stars, the coins are the stardust that the comete collects and the exit is our planet Earth. No sounds because in space there aren't.
