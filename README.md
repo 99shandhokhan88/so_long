@@ -6,6 +6,7 @@ My so_long is ispired by the space. The player is a comete that goes through bla
 The hardest part of the project was the path finder.
 I didn't the bonuses but I implemented the enemies.
 The core of the project is the manage of the matrix using the MLX library to show on the window the sprites.
+This was the most difficult project for me till now but also the most fun.
 
 ## Project Description
 "So_Long" is a simple game with the following features:
